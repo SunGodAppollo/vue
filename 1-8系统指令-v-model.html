@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="box">
+    <!-- v-model会双向绑定绑定元素内容的值进行输出 也就是说更改inout中的value值 vue中的值也会改变，可用于注册等功能的数据验证-->
+  <input type="text" name="" v-model:value="msg"><br>
+
+  </div>
+
+
+
+  <script type="text/javascript" src="js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{msg:'helloword'}
+
+  });
+
+  </script>
+
+  </body>
+</html>

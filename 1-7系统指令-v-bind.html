@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="box">
+    <!-- v-bind会绑定元素内容的值进行输出 -->
+  <input type="text" name="" v-bind:value="msg"><br>
+  <!-- 简写方式 -->
+  <input type="text" name="" :value="msg">
+  <a v-bind="{href:'前缀'+id}">链接</a>
+  </div>
+
+
+
+  <script type="text/javascript" src="js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{msg:'helloword',id:20}
+
+  });
+
+  </script>
+
+  </body>
+</html>

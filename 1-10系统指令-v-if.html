@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="box">
+    <!-- v-if 的值为false则会直接删除元素,为true则会新增 -->
+    <div class="" v-if="isShow">
+      显示
+    </div>
+    <button v-on:click="toggle" type="button" name="button">显示隐藏</button>
+  </div>
+
+
+
+  <script type="text/javascript" src="js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{isShow:true},
+
+    methods:{
+      toggle:function(){
+        this.isShow=!this.isShow;
+      }
+    }
+
+
+  });
+
+  </script>
+
+  </body>
+</html>

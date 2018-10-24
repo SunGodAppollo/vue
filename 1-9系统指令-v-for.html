@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="box">
+  <ul>
+    <!-- v-for相当于是一个 for循环 -->
+    <li v-for="item in list">{{item}}</li>
+    <!-- 打印索引 -->
+    <li v-for="(item,index) in list">{{index}}--{{item}}</li>
+    <!-- 打印对象属性 -->
+    <li v-for="(item,key,index) in User">{{index}}--{{key}}--{{item}}</li>
+    <!--防止相同属性报错-->
+    <li v-for="(item,index) in list" :key="index">{{index}}--{{item}}</li>
+
+  </ul>
+
+  </div>
+
+
+
+  <script type="text/javascript" src="js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{list:['tom','jerry','hankes','tom'],
+          User:{name:'Tom',age:'9'}
+    }
+
+  });
+
+  </script>
+
+  </body>
+</html>
