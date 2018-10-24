@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="box">
+    <!-- v-show 的值为false则会直接隐藏元素,为true则会显示 -->
+    <div class="" v-show="isShow">
+      显示
+    </div>
+    <button v-on:click="toggle" type="button" name="button">显示隐藏</button><br>
+    <!-- 简写的方式 -->
+    <button @click="toggle"  type="button" name="button">简写方式</button>
+    <!-- @submit.prevent 阻止html的submit提交 -->
+    <form  @submit.prevent class="" action="https://github.com" method="post">
+      <input type="submit" name="" value="">
+    </form>
+  </div>
+
+
+
+  <script type="text/javascript" src="js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{isShow:true},
+
+    methods:{
+      toggle:function(){
+        this.isShow=!this.isShow;
+      }
+    }
+
+
+  });
+
+  </script>
+
+  </body>
+</html>
