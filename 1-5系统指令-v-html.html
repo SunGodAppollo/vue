@@ -5,11 +5,12 @@
     <title></title>
   </head>
   <body>
-    
   <div id="box">
-    {{msg}}
+    <!-- v-text会等待内容解析完毕后才会显示 -->
+    <span v-text="msg"></span>
+      <!-- v-html会等待内容解析完毕后才会显示 ,而且还可以解析html内容-->
+    <div class="" v-html="msg"></div>
   </div>
-
 
 
 
@@ -19,7 +20,8 @@
   <script type="text/javascript">
   var vue=new Vue({
     el:'#box',
-    data:{msg:'helloword'}
+    data:{msg:'<h1>helloword</h1>'}
+
   });
 
   </script>

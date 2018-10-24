@@ -5,11 +5,11 @@
     <title></title>
   </head>
   <body>
-    
   <div id="box">
     {{msg}}
+    <!-- v-on:click="change"  是vue的绑定点击事件 -->
+    <button v-on:click="change" type="button" name="button">改变内容</button>
   </div>
-
 
 
 
@@ -19,7 +19,14 @@
   <script type="text/javascript">
   var vue=new Vue({
     el:'#box',
-    data:{msg:'helloword'}
+    data:{msg:'helloword'},
+    //定义方法
+    methods:{
+      change:function(){
+        this.msg="changeMsg";
+      }
+    }
+
   });
 
   </script>

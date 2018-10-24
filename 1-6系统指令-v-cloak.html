@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      [v-cloak]{
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    
   <div id="box">
-    {{msg}}
-  </div>
+    <!-- v-cloak会等待内容解析完毕后才会显示 ,原理为先隐藏元素,等待vue解析完成后再显示-->
+    <span v-cloak>{{msg}}</span>
 
+  </div>
 
 
 
@@ -20,6 +25,7 @@
   var vue=new Vue({
     el:'#box',
     data:{msg:'helloword'}
+
   });
 
   </script>

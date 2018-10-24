@@ -5,11 +5,11 @@
     <title></title>
   </head>
   <body>
-    
   <div id="box">
-    {{msg}}
+    {{msg}}<br>
+    {{msg +1 }}<br>
+    {{msg=='helloword'? 'true':'false'}}<br><!-- if判断不可以使用 -->
   </div>
-
 
 
 
@@ -20,6 +20,7 @@
   var vue=new Vue({
     el:'#box',
     data:{msg:'helloword'}
+
   });
 
   </script>
