@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+  <div id="box">
+    <hr>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" >添加</button>
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">添加数据</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+             <label for="exampleInputEmail1">ID</label>
+             <input type="text" v-model:value="id" class="form-control" id="exampleInputEmail1" placeholder="ID">
+          </div>
+          <div class="form-group">
+             <label for="exampleInputEmail1">NAME</label>
+             <input type="text" v-model:value="name" class="form-control" id="exampleInputEmail1" placeholder="NAME">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button @click="addData" type="button" class="btn btn-primary">提交</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <hr>
+    <table class="table table-bordered">
+      <tr>
+      <th>编号</th>
+      <th>名字</th>
+      <th>时间</th>
+      <th>操作</th>
+      </tr>
+
+      <tr v-for="item in list">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.time}}</td>
+      <td>
+        <button type="button" class="btn btn-info">修改</button>
+        <button @click="delData(item.id)" type="button" class="btn btn-danger">删除</button>
+      </td>
+      </tr>
+
+    </table>
+
+
+  </div>
+  </div>
+
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{list:[
+      {'id':1,name:'Tom',time:new Date},
+      {'id':2,name:'Jerry',time:new Date},
+      {'id':3,name:'Hankes',time:new Date}
+    ],
+    id:'',
+    name:''
+  },
+  methods:{
+    addData:function(){
+      this.list.push({'id':this.id,name:this.name,time:new Date});
+      this.id='';
+      this.name='';
+    },
+    delData:function(id){
+      if(confirm('是否确定删除')){
+        var index=this.list.findIndex(function(item){
+          return item.id==id;
+        });
+        this.list.splice(index,1);
+      }
+
+    }
+  }
+
+  });
+
+  </script>
+
+  </body>
+</html>

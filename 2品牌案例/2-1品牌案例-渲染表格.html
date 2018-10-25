@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+  <div id="box">
+    <hr>
+    <button type="button" class="btn btn-success" >添加</button>
+
+    <hr>
+    <table class="table table-bordered">
+      <tr>
+      <th>编号</th>
+      <th>名字</th>
+      <th>时间</th>
+      <th>操作</th>
+      </tr>
+
+      <tr v-for="item in list">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.time}}</td>
+      <td>
+        <button type="button" class="btn btn-info">修改</button>
+        <button type="button" class="btn btn-danger">删除</button>
+      </td>
+      </tr>
+
+    </table>
+
+
+  </div>
+  </div>
+
+
+  <script type="text/javascript" src="../js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{list:[
+      {'id':1,name:'Tom',time:new Date},
+      {'id':2,name:'Jerry',time:new Date},
+      {'id':3,name:'Hankes',time:new Date}
+    ],
+
+  },
+
+
+  });
+
+  </script>
+
+  </body>
+</html>
