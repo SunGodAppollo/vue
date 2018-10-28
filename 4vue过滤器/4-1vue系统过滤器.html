@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<!--
+    uppercase:小写转大写
+    json：对象转json -->
+  <div id="box">
+    {{msg | json | uppercase}}
+  </div>
+
+
+
+
+  <script type="text/javascript" src="../js/vue1.js">
+
+  </script>
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{msg:{
+      name:'Tom',
+      age:'9'
+    }}
+  });
+
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<!--
+    uppercase:小写转大写
+    json：对象转json -->
+  <div id="box">
+    {{time | datafmt}}
+  </div>
+
+  <div id="box2">
+    {{time | mypublic}}
+  </div>
+
+
+
+  <script type="text/javascript" src="../js/vue1.js">
+
+  </script>
+  <script type="text/javascript">
+  //全局过滤器 必须定义在开头
+  Vue.filter('mypublic',function(input){
+  return '全局过滤器';
+  });
+
+
+  var vue=new Vue({
+    el:'#box',
+    data:{time:new Date()},
+    // 此处定义的过滤器为私有过滤器 只有在el所对应的元素中才能使用
+    filters:{
+      datafmt:function(input){
+        var year=input.getFullYear();
+        var month=input.getMonth()+1;
+        var date=input.getDate();
+        return year+'-'+month+'-'+date;
+      }
+    }
+  });
+
+  var vue2=new Vue({
+    el:'#box2',
+    data:{time:new Date()},
+  });
+
+
+
+
+  </script>
+
+  </body>
+</html>
