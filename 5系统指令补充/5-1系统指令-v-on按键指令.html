@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
   <div id="box">
 
-  <input @keydown.enter='mykeydown'  type="text" v-model:value="msg">
+    <input @keydown.enter='mykeydown' type="text" v-model:value="msg">
   </div>
 
 
 
-  <script type="text/javascript" src="../js/vue1.js">
+  <script type="text/javascript" src="../js/vue1.js"></script>
 
-  </script>
-  
   <script type="text/javascript">
-  var vue=new Vue({
-    el:'#box',
-    data:{msg:'helloword'},
+    var vue = new Vue({
+      el: '#box',
+      data: {
+        msg: 'helloword'
+      },
 
-    methods:{
-      mykeydown:function(){
-        console.log('keydown');
+      methods: {
+        mykeydown: function() {
+          console.log('keydown');
+        }
       }
-    }
 
 
-  });
-
+    });
   </script>
 
-  </body>
+</body>
+
 </html>
