@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  <div id="box">
+    <input v-focus type="text" name="" value="1">
+    <input v-color="red" type="text" name="" value="2">
+  </div>
+
+
+
+
+  <script type="text/javascript" src="../js/vue1.js">
+
+  </script>
+
+
+  <script type="text/javascript">
+  // 自定义指令
+  // 定义指令时候不需要加v- 但是使用时必须加上v-
+  Vue.directive('focus',function(){
+    var thisInput=this.el;
+    console.log(thisInput);
+    thisInput.focus();
+    this.el.style.color='red';
+  });
+
+  // 自定义指令
+  // 定义指令时候不需要加v- 但是使用时必须加上v-
+  Vue.directive('color',function(color){
+    console.log(this.expression);
+    this.el.style.color=this.expression;
+  });
+
+  var vue=new Vue({
+    el:'#box',
+    data:{msg:'helloword'}
+  });
+
+  </script>
+
+  </body>
+</html>
