@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  <div id="box">
+    <button @click="getData" type="button" name="button">获取get请求</button>
+  </div>
+
+
+
+
+  <script type="text/javascript" src="../js/vue1.js">
+
+  </script>
+  <script type="text/javascript" src="./js/vue-resource.min.js">
+
+  </script>
+
+  <script type="text/javascript">
+  var vue=new Vue({
+    el:'#box',
+    data:{msg:'helloword'},
+    methods:{
+      getData:function(){
+        var url="./data.json";
+
+        this.$http.get(url).then(response => {
+            // success callback
+            console.log(response.body);
+          }, response => {
+            // error callback
+            console.log(response.body);
+            console.log('error');
+          });
+
+        console.log(1);
+      }
+    }
+  });
+
+  </script>
+
+  </body>
+</html>
