@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="../js/vue1.js"></script>
-    <script type="text/javascript" src="js/vue-resource.min.js"></script>
   </head>
   <body>
 
@@ -15,7 +13,12 @@
 
 
 
+  <script type="text/javascript" src="../js/vue1.js">
 
+  </script>
+  <script type="text/javascript" src="./js/vue-resource.min.js">
+
+  </script>
 
   <script type="text/javascript">
   var vue=new Vue({
@@ -23,7 +26,7 @@
     data:{msg:'helloword'},
     methods:{
       getData:function(){
-        var url="http://47.94.14.140:8081/washcarApp/member/login?phone=18482181420&passWord=123456";
+        var url="https://www.baidu.com/";
 
         this.$http.get(url).then(response => {
             // success callback
@@ -34,6 +37,7 @@
             console.log('error');
           });
 
+        console.log(1);
       }
     }
   });
