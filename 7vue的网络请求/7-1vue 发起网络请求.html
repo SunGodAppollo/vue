@@ -9,6 +9,9 @@
   <body>
 
   <div id="box">
+    <div class="">
+      {{msg}}
+    </div>
     <button @click="getData" type="button" name="button">获取get请求</button>
   </div>
 
@@ -20,7 +23,7 @@
   <script type="text/javascript">
   var vue=new Vue({
     el:'#box',
-    data:{msg:'helloword'},
+    data:{msg:'初始数据'},
     methods:{
       getData:function(){
         var url="http://47.94.14.140:8081/washcarApp/member/login?phone=18482181420&passWord=123456";
@@ -28,6 +31,7 @@
         this.$http.get(url).then(response => {
             // success callback
             console.log(response.body);
+            this.msg=response.body.header.err[0];
           }, response => {
             // error callback
             console.log(response.body);
