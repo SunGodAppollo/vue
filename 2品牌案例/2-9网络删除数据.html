@@ -143,18 +143,26 @@
           // error callback
           console.log('error');
       });
-/*
-      this.list.push({'id':this.id,name:this.name,time:new Date});
-      this.id='';
-      this.name='';
-      */
+
     },
+
+    //删除数据
     delData:function(id){
       if(confirm('是否确定删除')){
-        var index=this.list.findIndex(function(item){
-          return item.id==id;
-        });
-        this.list.splice(index,1);
+        var the=this;
+        var data={id:id};
+        var options={emulateJSON:true};
+        var url="http://127.0.0.1/vue/del.php";
+        this.$http.post(url,data,options).then(response => {
+            // success callback
+            if(response.body.salet=='success'){
+              this.getlist();
+            }
+            //this.msg=response.body.header.err[0];
+          }, response => {
+            // error callback
+            console.log('error');
+          });
       }
 
     }
