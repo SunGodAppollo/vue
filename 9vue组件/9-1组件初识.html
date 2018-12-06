@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="box">
+    {{msg}}
+  <my-component></my-component>  
+  </div>
+
+  <!-- 控制台输出
+  vue.msg="good"
+  "good"
+  vue.msg+=1
+  "good1" -->
+
+
+  <script type="text/javascript" src="../js/vue.js">
+
+  </script>
+  <script type="text/javascript">
+
+
+
+
+  var vue=new Vue({
+    el:'#box',
+    data:{msg:'helloword'},
+    components: {
+      'my-component': {
+        template: `<div>这是一个局部的自定义组件，只能在当前Vue实例中使用</div>`,
+      }
+    }
+  });
+
+  </script>
+
+  </body>
+</html>
