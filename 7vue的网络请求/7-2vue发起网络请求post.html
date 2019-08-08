@@ -8,6 +8,7 @@
 
   <div id="box">
     <button @click="getData" type="button" name="button">获取get请求</button>
+    {{msg | json}}
   </div>
 
 
@@ -27,9 +28,10 @@
     methods:{
       getData:function(){
         var url="https://unidemo.dcloud.net.cn/api/news";
-
+        var that=this;
         this.$http.get(url).then(response => {
             // success callback
+            that.msg=response.body;
             console.log(response.body);
           }, response => {
             // error callback
