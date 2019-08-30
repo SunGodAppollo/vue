@@ -12,10 +12,12 @@
     <!-- 打印索引 -->
     <li v-for="(item,index) in list">{{index}}--{{item}}</li>
     <!-- 打印对象属性 -->
-    <li v-for="(item,key,index) in User">{{index}}--{{key}}--{{item}}</li>
+    <li v-for="(item,key,index) in User">索引:{{index}}--键:{{key}}--值:{{item}}</li>
     <!--防止相同属性报错-->
     <li v-for="(item,index) in list" :key="index">{{index}}--{{item}}</li>
 
+    <!-- 数字循环 -->
+    <li v-for="number in 10" :key="index">{{number}}</li>
   </ul>
 
   </div>
