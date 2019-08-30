@@ -14,7 +14,9 @@
     </div>
     <button @click="getData" type="button" name="button">获取get请求</button>
     <ul>
-      <li v-for="item in lis">{{item.title}}</li>
+      <li v-for="item in lis">
+        <img :src="item.image[0].file_path" alt=""><br>
+        {{item.goods_name}}</li>
 
     </ul>
   </div>
@@ -33,12 +35,13 @@
     },
     methods:{
       getData:function(){
-        var url="https://unidemo.dcloud.net.cn/api/news";
+        var url="https://nuqgyf.coding.io/index.php?s=/api/goods/lists&wxapp_id=10001&category_id=10001&search&sortType=all&sortPrice=1";
         var headers={'Access-Control-Allow-Origin': '*'};
         this.$http.get(url).then(response => {
             // success callback
             console.log(response.body);
-            this.lis=response.body;
+            console.log(response.body.data.list.data[0]);
+            this.lis=response.body.data.list.data;
           }, response => {
             // error callback
             console.log(response.body);
