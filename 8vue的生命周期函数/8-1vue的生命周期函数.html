@@ -6,6 +6,7 @@
   </head>
   <body>
   <div id="box">
+    <button @click="changeMsg" type="button" name="修改msg信息">修改msg信息</button>
     {{msg}}
   </div>
 
@@ -57,6 +58,11 @@
       console.log('实例销毁完成');
     },
 
+    methods:{
+       changeMsg:function(){
+         this.msg='修改msg信息';
+       }
+    }
 
 
 
