@@ -11,13 +11,55 @@
 
 
 
-  <script type="text/javascript" src="js/vue.js">
+    <script type="text/javascript" src="../js/vue2.js">
 
   </script>
   <script type="text/javascript">
   var vue=new Vue({
     el:'#box',
-    data:{msg:'helloword'}
+    data:{msg:'helloword'},
+    //生命周期函数 ----实例被创建之前调用
+    beforeCreate(){
+       console.log('实例被创建之前');
+    },
+    //生命周期函数 ----实例被创建之后调用
+    created(){
+      console.log('实例被创建之后调用');
+    },
+
+    //生命周期函数 ----实例挂载页面之前
+    beforeMount(){
+      console.log('实例挂载页面之前');
+    },
+
+    //生命周期函数 ----实例挂载完成
+    mounted(){
+      console.log('实例挂载完成');
+    },
+
+    //生命周期函数 ----实例模板更新之前
+    beforeUpdate(){
+      console.log('实例模板更新之前');
+    },
+
+    //生命周期函数 ----实例模板更新完成
+    updated(){
+      console.log('实例模板更新完成');
+    },
+
+    //生命周期函数 ----实例销毁之前
+    beforeDestroy(){
+      console.log('实例销毁之前');
+    },
+
+    //生命周期函数 ----实例销毁完成
+    destroyed(){
+      console.log('实例销毁完成');
+    },
+
+
+
+
   });
 
   </script>
